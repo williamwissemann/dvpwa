@@ -2,6 +2,8 @@
 DVPWA -- Damn Vulnerable Python Web Application
 ===============================================
 
+<!-- comment -->
+
 Description
 ===========
 
