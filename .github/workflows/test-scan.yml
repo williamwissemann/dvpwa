@@ -6,6 +6,7 @@ jobs:
   test:
     # runs-on: ubuntu-latest
     runs-on: self-hosted
+    environment: HARNESS_PAT_TOKEN
     steps:
       - name: Checkout DVPWA Code
         uses: actions/checkout@v4
