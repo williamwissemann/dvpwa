@@ -16,6 +16,7 @@ jobs:
       - name: Run Security Scan
         uses: williamwissemann/sto-plugin-action@main
         with:
+          harness-domain: https://qa.harness.io
           harness-token: ${{ secrets.HARNESS_PAT_TOKEN }}
           harness-org-id: 'default'
           harness-project-id: 'test'
