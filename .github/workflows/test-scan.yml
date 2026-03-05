@@ -21,6 +21,6 @@ jobs:
           harness-domain: https://qa.harness.io
           harness-token: ${{ secrets.HARNESS_PAT_TOKEN }}
           harness-org-id: 'default'
-          harness-project-id: 'test'
+          harness-project-id: 'Jenkins'
           scanner_name: 'bandit'
           workspace: 'code'  # ← Match the path above
