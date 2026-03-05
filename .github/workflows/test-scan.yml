@@ -7,13 +7,17 @@ jobs:
     # runs-on: ubuntu-latest
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout DVPWA Code
+        uses: actions/checkout@v4
         with:
-          repository: anxolerd/dvpwa  # Test vulnerable app
+          repository: anxolerd/dvpwa
+          path: code  # ← Use a clearer name
 
-      - uses: williamwissemann/sto-plugin-action@main
+      - name: Run Security Scan
+        uses: williamwissemann/sto-plugin-action@main
         with:
           harness-token: ${{ secrets.HARNESS_PAT_TOKEN }}
           harness-org-id: 'default'
           harness-project-id: 'test'
           scanner_name: 'bandit'
+          workspace: 'code'  # ← Match the path above
