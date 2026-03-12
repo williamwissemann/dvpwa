@@ -4,9 +4,9 @@ on: [workflow_dispatch]
 
 jobs:
   test:
-    # runs-on: ubuntu-latest
-    runs-on: self-hosted
-    environment: HARNESS_PAT_TOKEN
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+    environment: HARNESS
     steps:
       - name: Checkout DVPWA Code
         uses: actions/checkout@v4
@@ -18,9 +18,8 @@ jobs:
         uses: williamwissemann/sto-plugin-action@main
         with:
           docker-image-tag: dev 
-          harness-domain: https://qa.harness.io
           harness-token: ${{ secrets.HARNESS_PAT_TOKEN }}
-          harness-org-id: 'default'
-          harness-project-id: 'Jenkins'
+          harness-org-id: 'STO'
+          harness-project-id: 'STO_LAB'
           scanner_name: 'bandit'
           workspace: 'code'  # ← Match the path above
